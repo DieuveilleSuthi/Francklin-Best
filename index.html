@@ -332,13 +332,35 @@
  }
 
  /* ---------- GIFTS ---------- */
- .gifts-methods{
- display:flex;
- justify-content:center;
- gap:1.6rem;
- margin-top:2.2rem;
- flex-wrap:wrap;
- }
+ .gifts-methods {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gift-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #0075EB, #00A3FF);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 117, 235, 0.3);
+}
+
+.gift-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 117, 235, 0.45);
+}
+
+.gift-btn:active {
+    transform: translateY(0);
+}
  .gift-chip{
  border:1px solid var(--sage);
  padding:0.9rem 1.8rem;
@@ -478,6 +500,27 @@
  .gallery-frame{opacity:1; transform:none;}
  .lightbox,.lightbox-content{transition:none !important;}
  }
+
+ .music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: transform 0.2s;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
 </style>
 </head>
 <body>
@@ -650,9 +693,13 @@
  Pour celles et ceux qui le souhaitent, une participation financière est également possible via :
  </p>
  <div class="gifts-methods">
- <div class="gift-chip">Wero — France</div>
- <div class="gift-chip">Wave — Côte d'Ivoire</div>
- </div>
+    <a href="https://revolut.me/francklinassi"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="gift-btn">
+        💳 Faire un don avec Revolut
+    </a>
+</div>
  <p style="margin-top:1.4rem; font-size:0.85rem; color:var(--grey); font-style:italic;">
  Les coordonnées pourront être obtenues auprès des mariés ou de leurs proches.
  </p>
@@ -689,6 +736,17 @@
  </div>
  <div class="lightbox-counter" id="lightbox-counter"></div>
 </div>
+
+<!-- Lecteur audio -->
+<audio id="backgroundMusic" autoplay loop>
+    <source src="songs/musique.mp4" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<!-- Bouton Play/Pause -->
+<button id="musicBtn" class="music-btn">
+    🔊
+</button>
 
 <script>
  // Countdown — target 10 Oct 2026, 09:00 (heure locale du site : Abidjan, GMT)
@@ -849,6 +907,37 @@
  clearInterval(window._cdInterval);
  window._cdInterval = setInterval(updateCountdownAnimated, 1000);
  updateCountdownAnimated();
+
+ const music = document.getElementById("backgroundMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+// Lance la musique au chargement
+window.addEventListener("load", async () => {
+    try {
+        await music.play();
+        musicBtn.textContent = "🔊";
+    } catch (err) {
+        console.log("Lecture automatique bloquée :", err);
+        musicBtn.textContent = "▶️";
+    }
+});
+
+// Bouton Play/Pause
+musicBtn.addEventListener("click", () => {
+
+    if (music.paused) {
+
+        music.play();
+        musicBtn.textContent = "🔊";
+
+    } else {
+
+        music.pause();
+        musicBtn.textContent = "🔇";
+
+    }
+
+});
 </script>
 
 </body>
