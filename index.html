@@ -531,19 +531,20 @@
             transform: translateY(0);
         }
 
-        .gifts-methods{
-        display:flex;
-        justify-content:center;
-        gap:1.6rem;
-        margin-top:2.2rem;
-        flex-wrap:wrap;
+        .gifts-methods {
+            display: flex;
+            justify-content: center;
+            gap: 1.6rem;
+            margin-top: 2.2rem;
+            flex-wrap: wrap;
         }
-        .gift-chip{
-        border:1px solid var(--sage);
-        padding:0.9rem 1.8rem;
-        font-size:0.95rem;
-        letter-spacing:0.05em;
-        color:var(--sage-deep);
+
+        .gift-chip {
+            border: 1px solid var(--sage);
+            padding: 0.9rem 1.8rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            color: var(--sage-deep);
         }
 
         /* ---------- INFO / CONTACT ---------- */
@@ -1061,7 +1062,7 @@
     </div>
 
     <!-- Lecteur audio -->
-    <audio id="backgroundMusic" autoplay loop>
+    <audio id="backgroundMusic" loop>
         <source src="songs/musique.mp4" type="audio/mpeg">
         Votre navigateur ne supporte pas l'audio.
     </audio>
@@ -1234,32 +1235,18 @@
         const music = document.getElementById("backgroundMusic");
         const musicBtn = document.getElementById("musicBtn");
 
-        // Lance la musique au chargement
-        window.addEventListener("load", async () => {
-            try {
-                await music.play();
-                musicBtn.textContent = "🔊";
-            } catch (err) {
-                console.log("Lecture automatique bloquée :", err);
-                musicBtn.textContent = "▶️";
-            }
-        });
+        // Initialise le bouton
+        musicBtn.textContent = "▶️";
 
         // Bouton Play/Pause
         musicBtn.addEventListener("click", () => {
-
             if (music.paused) {
-
                 music.play();
                 musicBtn.textContent = "🔊";
-
             } else {
-
                 music.pause();
                 musicBtn.textContent = "🔇";
-
             }
-
         });
     </script>
 
