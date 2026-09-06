@@ -817,6 +817,28 @@
         .music-btn:hover {
             transform: scale(1.1);
         }
+
+        .message-section {
+            padding: 4rem 1.5rem;
+            background: #f8f5ef;
+        }
+
+        .message-button {
+            display: inline-block;
+            padding: 0.85rem 1.6rem;
+            border-radius: 50px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        .message-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.85;
+        }
     </style>
 </head>
 
@@ -1048,29 +1070,44 @@
             <p>NB : un uniforme est prévu pour le mariage. Le modèle de pagne retenu est donné en image ci-dessous.
             </p>
             <div class="display center"><img src="./photo/pagne.jpeg" style="height: 25%; width: 25%;"></div>
+            <p>Notre histoire est retracée dans l’angle inférieur droit de la page. Veuillez cliquer sur le micro pour
+                écouter la chanson.</p>
         </div>
     </section>
     <section class="reveal" style="background:var(--cream);">
         <div class="wrap center">
             <div class="eyebrow">Cadeaux</div>
-            <h2 class="display" style="font-size:2.2rem; font-style:italic; margin-top:0.6rem;">Une pensée pour nous
+
+            <h2 class="display" style="font-size:2.2rem; font-style:italic; margin-top:0.6rem;">
+                Une petite attention pour nous
             </h2>
+
             <p style="max-width:520px; margin:1.2rem auto 0; font-size:0.98rem;">
-                Les mariés n'ont pas établi de liste de souhaits. Le choix du cadeau est laissé à l'appréciation de
-                chacun, selon ses possibilités.
+                Le plus beau cadeau pour nous sera de vous avoir à nos côtés pour partager
+                cette belle journée. ❤️
             </p>
+
             <p style="max-width:520px; margin:0.6rem auto 0; font-size:0.98rem;">
-                Pour celles et ceux qui le souhaitent, une participation financière est également possible via :
+                Si vous souhaitez nous gâter, une participation financière est privilégiée
+                afin de nous aider à construire nos projets pour cette nouvelle aventure.
+                Une petite wishlist est également disponible pour vous donner quelques idées, mais les cadeaux de votre choix nous feront tout autant plaisir. ❤️
             </p>
+
             <div class="gifts-methods">
                 <div class="gift-chip">Wero — France</div>
                 <div class="gift-chip">Wave — Côte d'Ivoire</div>
+                <a href="https://revolut.me/francklinassi"
+                    target="_blank" rel="noopener noreferrer" class="message-button">
+                    Revolut
+                </a>
+                <a href="https://www.milirose.com/liste-cadeaux-1349973.html"
+                    target="_blank" rel="noopener noreferrer" class="message-button">
+                    Wishlist
+                </a>
             </div>
-            <p style="margin-top:1.4rem; font-size:0.85rem; color:var(--grey); font-style:italic;">
-                Les coordonnées pourront être obtenues auprès des mariés ou de leurs proches.
-            </p>
         </div>
     </section>
+
 
     <!-- INFO -->
     <section class="info-section reveal">
@@ -1080,6 +1117,26 @@
             <p style="max-width:480px; margin:1rem auto 0; font-size:0.98rem;">
                 Mais par-dessus tout cela, revêtez-vous de l'amour, qui est le lien de la perfection.
             </p>
+        </div>
+    </section>
+
+    <section class="message-section reveal">
+        <div class="wrap center">
+            <div class="eyebrow">💌 Un mot pour les futurs mariés</div>
+
+            <h2 class="display" style="font-size:2rem; margin-top:0.6rem;">
+                Laissez un petit message aux futurs mariés
+            </h2>
+
+            <p style="max-width:480px; margin:1rem auto 1.5rem; font-size:0.98rem;">
+                Un mot doux, une bénédiction ou simplement quelques pensées
+                pour accompagner les futurs mariés dans cette belle étape.
+            </p>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf22eQbVAM83vUyKD9gv3nbBsf9VmaJUqjNlnQ_Y5VLFzKa9g/viewform?usp=preview"
+                target="_blank" rel="noopener noreferrer" class="message-button">
+                ✍️ Écrire un message
+            </a>
         </div>
     </section>
 
