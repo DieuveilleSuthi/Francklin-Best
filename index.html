@@ -581,6 +581,31 @@
             color: var(--sage-deep);
         }
 
+        /* Responsive mobile */
+        @media (max-width: 600px) {
+            .gifts-methods {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            .gift-chip,
+            .gifts-methods .message-button {
+                width: 100%;
+                max-width: 320px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .gifts-methods .message-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 48px;
+            }
+        }
+
         /* ---------- INFO / CONTACT ---------- */
         .info-section {
             background: var(--sage-pale);
@@ -1090,18 +1115,19 @@
             <p style="max-width:520px; margin:0.6rem auto 0; font-size:0.98rem;">
                 Si vous souhaitez nous gâter, une participation financière est privilégiée
                 afin de nous aider à construire nos projets pour cette nouvelle aventure.
-                Une petite wishlist est également disponible pour vous donner quelques idées, mais les cadeaux de votre choix nous feront tout autant plaisir. ❤️
+                Une petite wishlist est également disponible pour vous donner quelques idées, mais les cadeaux de votre
+                choix nous feront tout autant plaisir. ❤️
             </p>
 
             <div class="gifts-methods">
                 <div class="gift-chip">Wero — France</div>
                 <div class="gift-chip">Wave — Côte d'Ivoire</div>
-                <a href="https://revolut.me/francklinassi"
-                    target="_blank" rel="noopener noreferrer" class="message-button">
+                <a href="https://revolut.me/francklinassi" target="_blank" rel="noopener noreferrer"
+                    class="message-button">
                     Revolut
                 </a>
-                <a href="https://www.milirose.com/liste-cadeaux-1349973.html"
-                    target="_blank" rel="noopener noreferrer" class="message-button">
+                <a href="https://www.milirose.com/liste-cadeaux-1349973.html" target="_blank" rel="noopener noreferrer"
+                    class="message-button">
                     Wishlist
                 </a>
             </div>
